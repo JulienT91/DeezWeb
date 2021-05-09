@@ -43,6 +43,13 @@ const response = fetch(`https://api.deezer.com/track/${titleId}`)
       </audio>
     </figure>
     `;
+    let $button_ctr = document.querySelector("#button_ctr");
+    $button_ctr.innerHTML += `
+        <a href="${resultFinal.link}" class="showbtn">Voir le titre sur deezer</a>
+        <a href="" class="favbtn">Ajouter aux favoris</a>
+
+
+    `;
   })
   .catch((error) => {
     console.log(error);
