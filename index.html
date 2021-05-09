@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>DeezWeb</title>
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <link href="css/global.css" rel="stylesheet" />
+    <link href="css/navbar.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header>
+      <nav id="navbar">
+        <div class="nav-elemts" id="nav-elements">
+          <h1>DeezWeb</h1>
+          <ul class="nav-links">
+            <li><a href="#">Rechercher</a></li>
+            <li><a href="pages/fav.html">Favoris</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <form action="" method="get" class="form_choice">
+        <label for="text">Rechercher sur deezer</label>
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Rechercher sur deezer"
+          autocomplete="off"
+        />
+
+        <select id="choice">
+          <option value="">Trier les résultats de recherche par</option>
+          <option value="Album">Album</option>
+          <option value="Artist">Artiste</option>
+          <option value="Music">Musique</option>
+          <option value="MostPopulary">Les plus populaires</option>
+          <option value="MostRated">Les mieux notés</option>
+        </select>
+        <input type="button" value="Rechercher sur deezer" />
+      </form>
+      <div>
+        <div id="albums-list"></div>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="js/main.js" type="text/javascript"></script>
+  </body>
+</html>
