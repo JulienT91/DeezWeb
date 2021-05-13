@@ -35,6 +35,9 @@ const requestBtn = document
               <div>
                 <a href="pages/artist.html?id=${data.artist.id}">Voir le fiche de l'artiste</a>
               </div>
+              <div>
+                <i class="fas fa-heart"></i>
+              </div>
             </div>
 
           `;
@@ -76,14 +79,15 @@ document.addEventListener("change", choiceOptions);
 
 // Local Storage part
 const updateStorage = (id) => {
-  const storedIds = window.localStorage.getItem("deezweb_Julien_T");
-
-  let storageArray = [];
-  if (storedIds) {
-    storageArray = JSON.parse(storedIds);
+  const new_data = localStorage.getItem("data");
+  let fav_data = JSON.parse(new_data) || [];
+  if (localStorage.getItem("data" == null)) {
+    localStorage.getItem("data", "[]");
   }
-  storageArray.push(id);
-  window.localStorage.setItem("deeweb_Julien_T", JSON.stringify(storageArray));
+  fav_data.push(id);
+  localStorage.setItem("data", JSON.stringify(fav_data));
+  if (new_data != null) {
+  }
 };
 
 const WelcomeMessage = () => "Welcome on DeezWeb ! ";
