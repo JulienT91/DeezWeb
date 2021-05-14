@@ -16,7 +16,6 @@ const requestBtn = document
         let $ctnr = document.querySelector("#albums-list");
         for (data of resultFinal.data) {
           console.log(data);
-          updateStorage(data.album.id);
           // Duration to format min:seconds
           const minutes = Math.floor(data.duration / 60);
           const seconds = data.duration - minutes * 60;
@@ -36,12 +35,28 @@ const requestBtn = document
                 <a href="pages/artist.html?id=${data.artist.id}">Voir le fiche de l'artiste</a>
               </div>
               <div>
-                <i class="fas fa-heart"></i>
+                <a href="#"><i id="fav_btn" class="fas fa-heart"></i><a/>
               </div>
             </div>
 
           `;
         }
+        // Local Storage part
+        // watch on track_id => do not work /!\
+        let $fav_btn = document.querySelector("#fav_btn");
+        let new_data = localStorage.getItem("data");
+        new_data = new_data ? JSON.parse(track_id) : [];
+        if (new_data.includes(track_id)) {
+          $fav_btn.style.cssText = "font-weight: 900; color: #e3502b"; //on remplit les cœurs au clic
+        } else {
+          $fav_btn.style.cssText = "font-weight: 400"; //on remplit les cœurs au clic
+        }
+
+        fav_data.push(id);
+        localStorage.setItem("data", JSON.stringify(fav_data));
+
+        const WelcomeMessage = () => "Welcome on DeezWeb ! ";
+        console.log(WelcomeMessage());
       })
       .catch((error) => {
         console.log(error);
@@ -76,19 +91,3 @@ const choiceOptions = () => {
 };
 
 document.addEventListener("change", choiceOptions);
-
-// Local Storage part
-const updateStorage = (id) => {
-  const new_data = localStorage.getItem("data");
-  let fav_data = JSON.parse(new_data) || [];
-  if (localStorage.getItem("data" == null)) {
-    localStorage.getItem("data", "[]");
-  }
-  fav_data.push(id);
-  localStorage.setItem("data", JSON.stringify(fav_data));
-  if (new_data != null) {
-  }
-};
-
-const WelcomeMessage = () => "Welcome on DeezWeb ! ";
-console.log(WelcomeMessage());
