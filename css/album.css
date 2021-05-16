@@ -1,1 +1,75 @@
-/* No CSS *//*# sourceMappingURL=album.css.map */
+.album_desc {
+  text-align: center;
+}
+.album_desc a {
+  text-decoration: none;
+  color: #34bdff;
+  padding: 10px;
+}
+.album_tracks {
+  display: flex;
+  justify-content: center;
+  flex: wrap;
+}
+
+.album_tracks ul {
+  list-style: none;
+}
+
+.album_tracks li {
+  text-align: center;
+}
+
+.linkrank_album {
+  text-align: center;
+}
+.linkrank_album :first-child {
+  padding: 15px;
+}
+.linkrank_album a {
+  text-decoration: none;
+  border: 1px black solid;
+  background-color: #34bdff;
+  border-radius: 5px;
+  padding: 5px;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .album_desc {
+    text-align: center;
+  }
+  .album_desc a {
+    text-decoration: none;
+    color: #34bdff;
+    padding: 10px;
+  }
+  .album_tracks {
+    display: flex;
+    justify-content: center;
+    flex: wrap;
+  }
+
+  .album_tracks ul {
+    list-style: none;
+  }
+
+  .album_tracks li {
+    text-align: center;
+  }
+
+  .linkrank_album {
+    text-align: center;
+  }
+  .linkrank_album :first-child {
+    padding: 15px;
+  }
+  .linkrank_album a {
+    text-decoration: none;
+    border: 1px black solid;
+    background-color: #34bdff;
+    border-radius: 5px;
+    padding: 5px;
+    color: #fff;
+  }
+}

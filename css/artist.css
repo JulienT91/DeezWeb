@@ -1,1 +1,39 @@
-/* No CSS *//*# sourceMappingURL=artist.css.map */
+* {
+  text-align: center;
+}
+.artist_desc {
+  text-align: center;
+}
+.link_artist {
+  padding: 10px;
+}
+
+.link_artist a {
+  text-decoration: none;
+  border: 1px black solid;
+  background-color: #34bdff;
+  border-radius: 5px;
+  padding: 5px;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .artist_desc {
+    text-align: center;
+  }
+  .artist_desc img {
+    border-radius: 5%;
+  }
+  .link_artist {
+    padding: 10px;
+  }
+
+  .link_artist a {
+    text-decoration: none;
+    border: 1px black solid;
+    background-color: #34bdff;
+    border-radius: 5px;
+    padding: 5px;
+    color: #fff;
+  }
+}

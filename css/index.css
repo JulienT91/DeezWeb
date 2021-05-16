@@ -1,1 +1,54 @@
-/* No CSS *//*# sourceMappingURL=index.css.map */
+.form_choice {
+  padding: 5px;
+}
+.main_desc {
+  margin: 10px;
+}
+.link_main {
+  padding: 10px;
+}
+
+.link_main a {
+  border: 1px black solid;
+  background-color: #34bdff;
+  border-radius: 5px;
+  padding: 5px;
+  color: #fff;
+}
+
+.link_main button {
+  cursor: pointer;
+  padding: 5px;
+}
+
+@media (max-width: 768px) {
+  .form_choice {
+    text-align: center;
+    padding: 5px;
+  }
+
+  .main_desc {
+    margin: 10px;
+  }
+
+  .main_desc img {
+    border-radius: 5%;
+  }
+
+  .link_main {
+    padding: 10px;
+  }
+
+  .link_main a {
+    border: 1px black solid;
+    background-color: #34bdff;
+    border-radius: 5px;
+    padding: 5px;
+    color: #fff;
+  }
+
+  .link_main button {
+    cursor: pointer;
+    padding: 5px;
+  }
+}

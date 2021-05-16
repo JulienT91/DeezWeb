@@ -10,14 +10,18 @@ const response = fetch(`https://api.deezer.com/album/${albumId}`)
     console.log(resultFinal.rating);
     let $ctnr = document.querySelector("#albums-container");
     let ctnrHtml = `
-    <div>
+    <div class="album_desc">
       <h2>Album : ${resultFinal.title}</h2>
-        <h3>Artiste : <a href="artist.html?id=${resultFinal.artist.id}"/>${resultFinal.artist.name}</a>
+        <h3>Artiste : <a href="artist.html?id=${resultFinal.artist.id}"/>${resultFinal.artist.name} <i class="fas fa-music"></i></a>
         </h3>
-        <img src="${resultFinal.cover_medium}"/>
+        <figure>
+          <img src="${resultFinal.cover_medium}"/>
+          <figcaption>
+            <h3>Liste des tracks de cette album</h3>
+          </figcaption>
+        </figure>
     </div>
-    <div>
-      <h3>Liste des tracks de cette album</h3>
+    <div class="album_tracks">
     <ul>`;
 
     for (data of resultFinal.tracks.data) {
@@ -35,9 +39,9 @@ const response = fetch(`https://api.deezer.com/album/${albumId}`)
 
     ctnrHtml += `</ul>
     </div>
-    <div>
+    <div class="linkrank_album">
       <div> 
-        <a href="${resultFinal.link}">Consulter l'album sur deezer</a>
+        <a href="${resultFinal.link}" target="_blank">Consulter l'album sur deezer<i class="fas fa-headphones"></i></a>
       </div>
       <div>Rating: ${resultFinal.rating}</div>
     </div>

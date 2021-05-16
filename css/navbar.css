@@ -2,7 +2,7 @@ nav {
   width: 100%;
   background: #34bdff;
   -webkit-box-shadow: 0 0 3px #333;
-          box-shadow: 0 0 3px #333;
+  box-shadow: 0 0 3px #333;
   -webkit-transition: ease 0.5s;
   transition: ease 0.5s;
 }
@@ -12,11 +12,11 @@ nav {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 90%;
   margin: auto;
   -webkit-transition: ease 0.5s;
@@ -43,16 +43,16 @@ nav {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   list-style-type: none;
 }
 
 .nav-links,
 h1 {
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   color: #333;
 }
 
@@ -64,13 +64,12 @@ h1 {
 
 .nav-elemts h1:hover {
   -webkit-transform: translateX(-5px);
-          transform: translateX(-5px);
+  transform: translateX(-5px);
   font-weight: 100;
 }
 
 .nav-links li:hover {
   -webkit-transform: translateX(5px);
-          transform: translateX(5px);
+  transform: translateX(5px);
   font-weight: bold;
 }
-/*# sourceMappingURL=navbar.css.map */

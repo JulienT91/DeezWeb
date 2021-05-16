@@ -1,9 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
   font-family: "Quicksand", sans-serif;
 }
-/*# sourceMappingURL=global.css.map */
+main {
+  text-align: center;
+}
+
+audio {
+  border: 1px black solid;
+  padding: 5px;
+  background: black;
+  border-radius: 50px;
+}
+img {
+  border-radius: 5%;
+}
+
+li {
+  padding: 5px;
+}
+
+a {
+  text-decoration: none;
+}

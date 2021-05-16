@@ -1,26 +1,21 @@
-let track_id = localStorage.getItem("track_id");
-let id_list = JSON.parse(track_id);
-
-for (let i = 0; i < id_list.length; i++) {
+let trackList = localStorage.getItem("tracksIds");
+let trackListId = JSON.parse(trackList);
+console.log(trackListId);
+for (let i = 0; i < trackListId.length; i++) {
   window
-    .fetch(`https://api.deezer.com/track/${id_list[i]}`) //infos de l'API
+    .fetch(`https://api.deezer.com/track/${trackListId[i]}`) //infos de l'API
     .then((response) => response.json())
     .then((result) => {
-      //création div parent #trackLike
-      const favInfos = document.createElement("div");
+      const favInfos = document.querySelector(".fav_container");
       favInfos.setAttribute("id", `trackLike-${i}`);
-
-      document.querySelector("#favorites").appendChild(favInfos); //on ajoute en HTML le tableau des titres likées
       favInfos.innerHTML = `
-        
             <div id="trackTitle-${i}">
-                <a href="track.html?id=${result.id}">${result.title}</a>
+                <a href="title.html?id=${result.id}">${result.title}</a>
                 <p>${result.artist.name}</p>
             </div>
             <span>Album</span>
         `;
 
-      //ajout des boutons favoris
       const $favoriteTrack = document.createElement("button");
 
       //event au clic sur le bouton
@@ -29,7 +24,7 @@ for (let i = 0; i < id_list.length; i++) {
         track_list = JSON.parse(track_list);
 
         //suppression du localStorage
-        track_list.splice(track_list.indexOf(id_list[i]), 1);
+        track_list.splice(track_list.indexOf(trackListId[i]), 1);
         localStorage.setItem("tracksIds", JSON.stringify(track_list));
 
         //suppression du DOM

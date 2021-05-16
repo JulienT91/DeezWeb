@@ -45,11 +45,45 @@ const response = fetch(`https://api.deezer.com/track/${titleId}`)
     `;
     let $button_ctr = document.querySelector("#button_ctr");
     $button_ctr.innerHTML += `
-        <a href="${resultFinal.link}" class="showbtn">Voir le titre sur deezer</a>
-        <a href="" class="favbtn">Ajouter aux favoris</a>
+        <a href="${resultFinal.link}" class="showbtn" target="_blank">Voir le titre sur deezer</i></a>
+        <button class="fav_btn" title="Ajouter aux favoris"><i class="fas fa-heartbeat"></i></button>
 
 
     `;
+
+    //on s'occupe du bouton favori
+    const $favoriteTrack = document.querySelector(".fav_btn");
+
+    //on vérifie si certaines musiques sont en fav ou non
+    let trackList = localStorage.getItem("tracksIds");
+    trackList = trackList ? JSON.parse(trackList) : [];
+
+    if (trackList.includes(titleId)) {
+      $favoriteTrack.style.cssText = "font-weight: 900; color: #e3502b"; //on remplit les cœurs au clic
+    } else {
+      $favoriteTrack.style.cssText = "font-weight: 400"; //on remplit les cœurs au clic
+    }
+
+    //on fait un event au clic pour mettre des musiques en fav
+    $favoriteTrack.addEventListener("click", () => {
+      let track_List = localStorage.getItem("tracksIds");
+
+      //s'il n'y en a pas on crée un tableau | s'il y en a, on transforme la string en tableau
+      track_List = track_List ? JSON.parse(track_List) : [];
+
+      //on vérifie si l'id est déjà dans le tableau. si oui on l'enlève | sinon on l'ajoute
+      if (track_List.includes(titleId)) {
+        //déjà présent : on retire + vide le cœur au clic
+        track_List.splice(track_List.indexOf(titleId), 1);
+        $favoriteTrack.style.cssText = "font-weight: 400";
+      } else {
+        //pas encore là : on push l'id + remplit le cœur au clic
+        track_List.push(titleId);
+        $favoriteTrack.style.cssText = "font-weight: 900; color: #e3502b";
+      }
+
+      localStorage.setItem("tracksIds", JSON.stringify(track_List)); //on enregistre dans localstorage
+    });
   })
   .catch((error) => {
     console.log(error);
